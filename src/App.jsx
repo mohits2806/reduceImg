@@ -123,12 +123,12 @@ const App = () => {
   ]);
 
   return (
-    <div className="min-w-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className="min-w-screen bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 transition-colors duration-300">
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         <Header />
 
         <div className="space-y-8">
-          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700">
+          <div className="bg-gray-800 rounded-3xl shadow-2xl p-8 border border-gray-700">
             <ImageDropzone
               onImageUpload={setOriginalImage}
               originalImage={originalImage}
@@ -180,7 +180,7 @@ const App = () => {
                         (!targetSize.trim() ||
                           isNaN(parseFloat(targetSize)) ||
                           parseFloat(targetSize) <= 0))
-                        ? "bg-gray-400 text-gray-200 opacity-50 hover:cursor-not-allowed"
+                        ? "bg-gray-600 text-gray-400 opacity-50 cursor-not-allowed"
                         : "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 hover:scale-105 shadow-xl hover:shadow-2xl"
                     }`}
                   >

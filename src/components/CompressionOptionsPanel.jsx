@@ -8,8 +8,8 @@ const CompressionOptionsPanel = ({
   onStripMetadataChange,
 }) => {
   return (
-    <div className="mb-6 p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-xl">
-      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+    <div className="mb-6 p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl">
+      <h3 className="text-lg font-semibold text-gray-200 mb-4">
         Compression Options
       </h3>
 
@@ -21,8 +21,8 @@ const CompressionOptionsPanel = ({
               flex-1 py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center
               ${
                 compressionMethod === "preset"
-                  ? "bg-blue-500 text-white shadow-lg transform scale-105"
-                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 opacity-50"
+                  ? "bg-blue-500 dark:text-white shadow-lg transform scale-105"
+                  : "bg-gray-800 dark:text-gray-300 hover:bg-gray-700 border border-gray-700 opacity-50"
               }
             `}
           >
@@ -35,8 +35,8 @@ const CompressionOptionsPanel = ({
               flex-1 py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center
               ${
                 compressionMethod === "target"
-                  ? "bg-blue-500 text-white shadow-lg transform scale-105"
-                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 opacity-50"
+                  ? "bg-blue-500 dark:text-white shadow-lg transform scale-105"
+                  : "bg-gray-800 dark:text-gray-300 hover:bg-gray-700 border border-gray-700 opacity-50"
               }
             `}
           >
@@ -56,7 +56,7 @@ const CompressionOptionsPanel = ({
             <div
               className={`
               w-14 h-7 rounded-full transition-colors duration-300
-              ${stripMetadata ? "bg-blue-500" : "bg-gray-300 dark:bg-gray-600"}
+              ${stripMetadata ? "bg-blue-500" : "bg-gray-600"}
             `}
             >
               <div
@@ -67,7 +67,7 @@ const CompressionOptionsPanel = ({
               ></div>
             </div>
           </div>
-          <span className="text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100">
+          <span className="text-gray-300 group-hover:text-gray-100">
             Remove metadata (EXIF, location, etc.)
           </span>
         </label>

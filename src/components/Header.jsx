@@ -3,7 +3,7 @@ import { Sun, Moon, ImageIcon } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 dark:from-purple-900 dark:via-blue-900 dark:to-indigo-900 text-white p-6 rounded-2xl shadow-2xl mb-8">
+    <header className="relative overflow-hidden bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 text-white p-6 rounded-2xl shadow-2xl mb-8">
       <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="relative z-10 flex justify-between items-center">
         <div className="flex items-center space-x-3">

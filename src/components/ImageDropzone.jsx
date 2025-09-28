@@ -22,22 +22,28 @@ const ImageDropzone = ({ onImageUpload, originalImage }) => {
     setIsDragging(false);
   }, []);
 
-  const handleFile = useCallback((file) => {
-    if (file && file.type.startsWith("image/")) {
-      onImageUpload(file);
-    }
-  }, [onImageUpload]);
+  const handleFile = useCallback(
+    (file) => {
+      if (file && file.type.startsWith("image/")) {
+        onImageUpload(file);
+      }
+    },
+    [onImageUpload]
+  );
 
-  const handleDrop = useCallback((e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(false);
+  const handleDrop = useCallback(
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsDragging(false);
 
-    const files = e.dataTransfer.files;
-    if (files && files[0]) {
-      handleFile(files[0]);
-    }
-  }, [handleFile]);
+      const files = e.dataTransfer.files;
+      if (files && files[0]) {
+        handleFile(files[0]);
+      }
+    },
+    [handleFile]
+  );
 
   const handleInputChange = (e) => {
     const file = e.target.files[0];
@@ -50,8 +56,8 @@ const ImageDropzone = ({ onImageUpload, originalImage }) => {
         relative border-3 border-dashed rounded-2xl p-8 text-center transition-all duration-300
         ${
           isDragging
-            ? "border-blue-500 bg-blue-50 dark:bg-blue-900/30 scale-105"
-            : "border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 bg-white dark:bg-gray-800"
+            ? "border-blue-500 bg-blue-900/30 scale-105"
+            : "border-gray-600 hover:border-gray-500 bg-gray-800"
         }
         ${
           originalImage
@@ -85,14 +91,14 @@ const ImageDropzone = ({ onImageUpload, originalImage }) => {
           <div className="flex items-center justify-center space-x-4">
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center"
+              className="px-4 py-2 bg-blue-500 dark:text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center"
             >
               <Upload className="w-4 h-4 mr-2" />
               Replace Image
             </button>
             <button
               onClick={() => onImageUpload(null)}
-              className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors flex items-center"
+              className="px-4 py-2 bg-red-500 dark:text-white rounded-lg hover:bg-red-600 transition-colors flex items-center"
             >
               <Trash2 className="w-4 h-4 mr-2" />
               Clear
@@ -107,10 +113,10 @@ const ImageDropzone = ({ onImageUpload, originalImage }) => {
             }`}
           />
           <div>
-            <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+            <p className="text-xl font-semibold text-gray-300">
               Drop your image here
             </p>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            <p className="text-sm text-gray-400 mt-2">
               or{" "}
               <label
                 htmlFor="image-upload"
